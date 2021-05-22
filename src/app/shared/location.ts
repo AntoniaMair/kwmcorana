@@ -1,12 +1,16 @@
+import { Vacevent } from "./vacevent";
+export { Vacevent } from "./vacevent";
+
 export class Location {
 
   constructor(
-  id: number, 
-  bezeichnung: String, 
-  street: String, 
-  plz: String, 
-  ort: String, 
-  capacity: number, 
-  district_id: number
+  public id: number, 
+  public bezeichnung: String, 
+  public street: String, 
+  public plz: String, 
+  public ort: String, 
+  public capacity: number, 
+  public district_id: number,
+  public vacevents?: Vacevent[]
   ){}
 }
