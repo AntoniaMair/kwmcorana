@@ -1,0 +1,40 @@
+
+<h1>Registrierungsformular</h1>
+<form class="ui large form" [formGroup]="registrationForm"
+(ngSubmit)="submitForm()">
+<input type="hidden" name="id">
+<div class="field">
+<label>Vorname</label>
+<input formControlName="firstname">
+<div *ngIf="errors.firstname" class="ui negative message"> {{ errors.firstname
+}} </div>
+</div>
+<div class="field">
+<label>Nachname</label>
+<input formControlName="lastname">
+<div *ngIf="errors.lastname" class="ui negative message"> {{ errors.lastname
+}} </div>
+</div>
+<label>Geschlecht</label>
+<input formControlName="sex">
+<div *ngIf="errors.sex" class="ui negative message">{{ errors.sex}}
+</div>
+<label>Sozialversicherungsnummer</label>
+<input formControlName="svnr">
+<div *ngIf="errors.svnr" class="ui negative message">{{ errors.svnr}}
+</div>
+<label>E-Mail</label>
+<input formControlName="email">
+<div *ngIf="errors.email" class="ui negative message">{{ errors.email}}
+</div>
+<label>Telefonnummer</label>
+<input formControlName="tel">
+<div *ngIf="errors.tel" class="ui negative message">{{ errors.tel}}
+</div>
+<input type="hidden" name="vacevent_id">
+
+<button type="submit" class="ui button"
+[disabled]="registrationForm.invalid">Speichern</button>
+</form>
+
+
