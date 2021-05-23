@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'locations', component: LocationListComponent },
   { path: 'vaccinated/:vacevent_id', component: VaccinatedsListComponent },
   { path: "vacevent/:location_id", component:  VaceventListComponent},
+  { path: "vacevent/:id", component:  RegistrationFormComponent},
 ];
 
 @NgModule({

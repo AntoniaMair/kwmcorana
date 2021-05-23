@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -21,7 +21,7 @@ import { VaccinatedsListItemComponent } from './vaccinateds-list-item/vaccinated
 
 
 @NgModule({
-  imports:      [ BrowserModule, AppRoutingModule, HttpClientModule],
+  imports:      [ BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
   declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, VaceventListComponent, VaccinatedsListComponent, VaceventFormComponent, RegistrationFormComponent, VaceventListItemComponent, VaccinatedsListItemComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LocationService, VaccinatedService, VaceventService]
