@@ -1,0 +1,9 @@
+<div class="ui middle aligned selection divided list">
+<a *ngFor="let vaccinated of vaccinateds" class="item kc-vaccinateds-list-item" 
+ [vaccinated]="vaccinated" [routerLink]="'/'"></a>
+<div *ngIf="!vaccinateds" class="ui active dimmer">
+<div class="ui large text loader">Daten werden geladen...</div>
+</div>
+<p *ngIf="vaccinateds && !vaccinateds.length">Es wurden noch keine Personen
+eingetragen.</p>
+</div>
