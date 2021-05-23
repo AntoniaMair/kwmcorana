@@ -1,4 +1,7 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="ui three item tabs menu">
+<a routerLink="locations" routerLinkActive="active" class="item">Locations</a>
+<a routerLink="vacevents" routerLinkActive="active" class="item">Vacevents</a>
+<a routerLink="vaccinateds" routerLinkActive="active" class="item">Vaccinateds</a>
+</div>
+
+<router-outlet></router-outlet>
