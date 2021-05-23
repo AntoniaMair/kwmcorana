@@ -11,14 +11,15 @@ import { VaccinatedsListComponent } from './vaccinateds-list/vaccinateds-list.co
 import { VaceventFormComponent } from './vacevent-form/vacevent-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { LocationService } from './shared/location.service';
-import {AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { VaccinatedService } from './shared/vaccinated.service';
 import { VaceventService } from './shared/vacevent.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 
 @NgModule({
-  imports:      [ BrowserModule, AppRoutingModule, FormsModule ],
+  imports:      [ BrowserModule, AppRoutingModule, HttpClientModule],
   declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, VaceventListComponent, VaccinatedsListComponent, VaceventFormComponent, RegistrationFormComponent ],
   bootstrap:    [ AppComponent ],
   providers: [LocationService, VaccinatedService, VaceventService]
