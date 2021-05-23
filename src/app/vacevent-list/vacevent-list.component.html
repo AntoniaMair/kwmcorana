@@ -1,3 +1,9 @@
-<p>
-vacevent-list works!
-</p>
+<div class="ui middle aligned selection divided list">
+<a *ngFor="let vacevent of vacevents" class="item kc-vacevent-list-item" 
+ [vacevent]="vacevent" [routerLink]="'../../vaccinated/'+vacevent.id"></a>
+<div *ngIf="!vacevents" class="ui active dimmer">
+<div class="ui large text loader">Daten werden geladen...</div>
+</div>
+<p *ngIf="vacevents && !vacevents.length">Es wurden noch keine Vacevents
+eingetragen.</p>
+</div>
