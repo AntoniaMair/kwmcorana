@@ -1,0 +1,26 @@
+
+<h1>Impftermin</h1>
+<form class="ui large form" [formGroup]="vaceventForm"
+(ngSubmit)="submitForm()">
+<input type="hidden" name="id">
+<div class="field">
+<label>Datum</label>
+<input type="datetime" formControlName="vacdate">
+<div *ngIf="errors.vacdate" class="ui negative message"> {{ errors.vacdate
+}} </div>
+</div>
+<div class="field">
+<label>Maximale Personenanzahl</label>
+<input formControlName="maxPers">
+<div *ngIf="errors.maxPers" class="ui negative message"> {{ errors.maxPers
+}} </div>
+</div>
+<div class="field" [class.disabled]="isUpdatingVacevent">
+<label>Location</label>
+<input formControlName="location_id">
+<div *ngIf="errors.location_id" class="ui negative message">{{ errors.location_id }}
+</div>
+</div>
+<button type="submit" class="ui button"
+[disabled]="vaceventForm.invalid">Speichern</button>
+</form>

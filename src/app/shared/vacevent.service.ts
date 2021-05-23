@@ -36,7 +36,7 @@ export class VaceventService {
   }
   update(vacevent: Vacevent): Observable<any> {
     return this.http
-      .post(`${this.api}/vacevent/${vacevent.id}`, vacevent)
+      .put(`${this.api}/vacevent/${vacevent.id}`, vacevent)
       .pipe(retry(3))
       .pipe(catchError(this.errorHandler));
   }
