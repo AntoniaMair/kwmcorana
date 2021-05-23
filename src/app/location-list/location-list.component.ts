@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Location, Vacevent} from '../shared/location';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Location, Vacevent } from '../shared/location';
+import { LocationService } from '../shared/location.service';
 
 @Component({
   selector: 'kc-location-list',
@@ -7,12 +8,20 @@ import {Location, Vacevent} from '../shared/location';
   styleUrls: ['./location-list.component.css']
 })
 export class LocationListComponent implements OnInit {
-   locations: Location[];
+  locations: Location[];
 
-  constructor() { }
+  @Output() showDetailsEvent = new EventEmitter<Location>();
 
-  ngOnInit() {
-   
+  constructor(private ls: LocationService) {}
+
+  showDetails(location: Location) {
+    this.showDetailsEvent.emit(location);
   }
 
+  ngOnInit() {
+    this.ls.getAll().subscribe(res => {
+      this.locations = res;
+      console.log(this.locations);
+    });
+  }
 }

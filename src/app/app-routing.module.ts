@@ -11,8 +11,8 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 const routes: Routes = [
   { path: '', redirectTo: 'locaation', pathMatch: 'full' },
   { path: 'locations', component: LocationListComponent },
-  { path: 'vacevents', component: VaceventListComponent },
-  { path: 'vaccinateds', component: VaccinatedsListComponent }
+  { path: 'vaccinateds', component: VaccinatedsListComponent },
+  { path: "vacevent/:location_id", component:  VaceventListComponent},
 ];
 
 @NgModule({

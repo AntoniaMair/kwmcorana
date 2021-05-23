@@ -17,6 +17,13 @@ export class LocationService {
       .pipe(retry(3)).pipe(catchError(this.errorHandler))
   }
 
+   getSingle(id: number): Observable<Location> {
+    return this.http.get<Location>(`${this.api}/location/${id}`)
+     .pipe(retry(3)).pipe(catchError(this.errorHandler))
+  }
+
+  
+
   private errorHandler(error: Error | any): Observable<any> {
   return throwError(error);
   }

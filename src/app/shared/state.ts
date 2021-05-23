@@ -4,7 +4,7 @@ export { District } from './district';
 export class State {
   constructor(
     public id: number,
-    public bezeichnung: String,
+    public bezeichnung: string,
     public districts: District[]
   ) {}
 }

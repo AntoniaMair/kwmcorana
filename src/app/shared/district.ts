@@ -5,7 +5,7 @@ export class District {
 
   constructor(
     public id:number, 
-    public bezeichnung: String, 
+    public bezeichnung: string, 
     public state_id: number,
     public locations: Location[]
     ){}

@@ -3,10 +3,10 @@ import { Role } from "./role";
 export class User {
   constructor(
     public id: number,
-    public email: String,
+    public email: string,
     public vaccinated_id: number,
     public roles: Role[],
-    public password?: String,
+    public password?: string,
     public email_verified_at?: Date
   ) {}
 }
