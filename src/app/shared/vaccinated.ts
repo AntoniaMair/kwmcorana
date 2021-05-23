@@ -1,6 +1,7 @@
 export class Vaccinated {
 
   constructor(
+  public id:number,
   public firstname: String, 
   public lastname:String, 
   public sex:String, 

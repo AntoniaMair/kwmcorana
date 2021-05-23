@@ -12,6 +12,8 @@ import { VaceventFormComponent } from './vacevent-form/vacevent-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { LocationService } from './shared/location.service';
 import {AppRoutingModule} from './app-routing.module';
+import { VaccinatedService } from './shared/vaccinated.service';
+import { VaceventService } from './shared/vacevent.service';
 
 
 
@@ -19,6 +21,6 @@ import {AppRoutingModule} from './app-routing.module';
   imports:      [ BrowserModule, AppRoutingModule, FormsModule ],
   declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, VaceventListComponent, VaccinatedsListComponent, VaceventFormComponent, RegistrationFormComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [LocationService]
+  providers: [LocationService, VaccinatedService, VaceventService]
 })
 export class AppModule { }
