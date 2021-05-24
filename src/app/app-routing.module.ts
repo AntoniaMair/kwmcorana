@@ -8,6 +8,7 @@ import { VaceventListComponent } from './vacevent-list/vacevent-list.component';
 import { VaceventFormComponent } from './vacevent-form/vacevent-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { MyeventsComponent } from './myevents/myevents.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'locaation', pathMatch: 'full' },
@@ -19,6 +20,8 @@ const routes: Routes = [
   { path: "admin/:id", component: VaceventFormComponent },
   { path: "admin/add/:location_id", component: VaceventFormComponent },
   { path: "myevents/:vaccinated_id", component: MyeventsComponent },
+  { path: 'login', component: LoginComponent}
+
 ];
 
 @NgModule({

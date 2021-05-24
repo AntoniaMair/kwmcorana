@@ -18,13 +18,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { VaceventListItemComponent } from './vacevent-list-item/vacevent-list-item.component';
 import { VaccinatedsListItemComponent } from './vaccinateds-list-item/vaccinateds-list-item.component';
 import { MyeventsComponent } from './myevents/myevents.component';
+import { LoginComponent } from './login/login.component';
+import { AuthenticationService } from './shared/authentication.service';
 
 
 
 @NgModule({
   imports:      [ BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
-  declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, VaceventListComponent, VaccinatedsListComponent, VaceventFormComponent, RegistrationFormComponent, VaceventListItemComponent, VaccinatedsListItemComponent, MyeventsComponent ],
+  declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, VaceventListComponent, VaccinatedsListComponent, VaceventFormComponent, RegistrationFormComponent, VaceventListItemComponent, VaccinatedsListItemComponent, MyeventsComponent, LoginComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [LocationService, VaccinatedService, VaceventService]
+  providers: [LocationService, VaccinatedService, VaceventService, AuthenticationService]
 })
 export class AppModule { }

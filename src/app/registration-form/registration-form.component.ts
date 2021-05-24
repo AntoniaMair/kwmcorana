@@ -31,9 +31,12 @@ this.initVaccinated();
 }
 
 initVaccinated() {
+  //TODO: change user_id
 this.registrationForm = this.fb.group({
 id: this.vaccinated.id,
 vacevent_id: this.route.snapshot.params["vacevent_id"],
+user_id: 1,
+
 firstname: [this.vaccinated.firstname, Validators.required],
 lastname: [this.vaccinated.lastname, Validators.required],
 sex: [this.vaccinated.sex, Validators.required],

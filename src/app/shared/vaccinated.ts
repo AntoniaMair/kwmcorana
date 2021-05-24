@@ -10,5 +10,6 @@ export class Vaccinated {
   public email:string,
   public tel:string,
   public vaccinated:number,
+  public user_id?:number,
   public vacevent_id?:number){}
 }
