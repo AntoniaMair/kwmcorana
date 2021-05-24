@@ -1,11 +1,9 @@
-<h2>Glückwunsch, Sie wurden für eine Impfung registiert</h2>
-  <div class="header">{{vacevent.vacdate}}</div>
+<h2>Ihre Impfregistrierung</h2>
 <p>Details zu Ihrer Impfung</p>
-
 <div class="content">
-  <div class="header">{{vacevent?.vacdate}}</div><!--
-  <div class="address1">{{vacevent?.location}}</div>
-  <div class="address2">{{vacevent?.location}} {{vacevent?.location}}</div>-->
+  <div class="header">Impfdatum: {{vacevent?.vacdate}}</div>
+  <div class="address1">Impflocation: {{vacevent?.location['bezeichnung']}}</div>
+  <div class="address2">Adresse: {{vacevent?.location['street']}},  {{vacevent?.location['plz']}} {{vacevent?.location['ort']}}</div>
   
 </div>
 

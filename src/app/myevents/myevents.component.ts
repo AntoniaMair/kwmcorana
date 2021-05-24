@@ -20,7 +20,7 @@ private router: Router) { }
     console.log(this.route.snapshot.params);
     const id = this.route.snapshot.params["vaccinated_id"];
     this.ves.getByVaccinated(id).subscribe(res => {
-
+      this.vacevent = res;
       //check how this can work
       //this.vacevent = VaceventFactory.fromObject(res);
       console.log(this.vacevent);
