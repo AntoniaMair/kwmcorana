@@ -7,6 +7,7 @@ import { VaccinatedsListComponent } from './vaccinateds-list/vaccinateds-list.co
 import { VaceventListComponent } from './vacevent-list/vacevent-list.component';
 import { VaceventFormComponent } from './vacevent-form/vacevent-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { MyeventsComponent } from './myevents/myevents.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'locaation', pathMatch: 'full' },
@@ -14,9 +15,11 @@ const routes: Routes = [
   { path: 'vaccinated/:vacevent_id', component: VaccinatedsListComponent },
   { path: "vacevent/:location_id", component:  VaceventListComponent},
   { path: "register/:vacevent_id", component:  RegistrationFormComponent},
-  { path: "admin", component: VaceventFormComponent },
+  //{ path: "admin", component: VaceventFormComponent },
   { path: "admin/:id", component: VaceventFormComponent },
   { path: "admin/add/:location_id", component: VaceventFormComponent },
+  { path: "myevents/:vaccinated_id", component: MyeventsComponent },
+
 
 ];
 

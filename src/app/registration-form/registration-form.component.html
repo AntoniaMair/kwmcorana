@@ -15,21 +15,29 @@
 <div *ngIf="errors.lastname" class="ui negative message"> {{ errors.lastname
 }} </div>
 </div>
+<div class="field">
 <label>Geschlecht</label>
 <input formControlName="sex">
 <div *ngIf="errors.sex" class="ui negative message">{{ errors.sex}}
 </div>
+</div>
+<div class="field">
 <label>Sozialversicherungsnummer</label>
 <input formControlName="svnr">
 <div *ngIf="errors.svnr" class="ui negative message">{{ errors.svnr}}
 </div>
+</div>
+<div class="field">
 <label>E-Mail</label>
 <input formControlName="email">
 <div *ngIf="errors.email" class="ui negative message">{{ errors.email}}
 </div>
+</div>
+<div class="field">
 <label>Telefonnummer</label>
 <input formControlName="tel">
 <div *ngIf="errors.tel" class="ui negative message">{{ errors.tel}}
+</div>
 </div>
 <input type="hidden" name="vacevent_id">
 

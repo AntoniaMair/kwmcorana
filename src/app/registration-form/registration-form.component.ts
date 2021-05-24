@@ -51,9 +51,10 @@ submitForm() {
 const vaccinated: Vaccinated = VaccinatedFactory.fromObject(this.registrationForm.value);
 console.log(vaccinated);
 this.vs.create(vaccinated).subscribe(res => {
+const vaccinated_id = res["id"];
 this.vaccinated = VaccinatedFactory.empty();
 this.registrationForm.reset(VaccinatedFactory.empty());
-this.router.navigate(["/locations"], { relativeTo: this.route
+this.router.navigate(["../../myevents", vaccinated_id], { relativeTo: this.route
 });
 });
 }
