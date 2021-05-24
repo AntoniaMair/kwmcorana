@@ -34,6 +34,12 @@ export class VaceventListItemComponent implements OnInit {
       });
     }
   }
+   reloadCurrentRoute(currentUrl) {
+    console.log(currentUrl);
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
 
   
 
