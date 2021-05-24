@@ -1,9 +1,9 @@
-<div class="ui {{isLoggedIn()?'three':'two'}} item tabs menu">
+<div class="ui {{isLoggedIn() && isRegistered() ?'three':'two'}} item tabs menu">
 <a routerLink="locations" routerLinkActive="active" class="item">Locations</a>
 <a routerLink="login" routerLinkActive="active"
 class="item">{{getLoginLabel()}}</a>
 <!--TODO: add the currently logged in users id and only show if he is already vaccinated-->
-<a *ngIf="isLoggedIn()" routerLink="myevents/22" routerLinkActive="active" class="item">Mein Impftermin</a>
+<a *ngIf="isLoggedIn() && isRegistered()" routerLink="myevents/{{vaccinated_id}}" routerLinkActive="active" class="item">Mein Impftermin</a>
 </div>
 
 <router-outlet></router-outlet>
