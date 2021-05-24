@@ -17,14 +17,20 @@ export class VaceventListItemComponent implements OnInit {
     private router: Router,) { }
 
   ngOnInit() {
-  }
-
-   isDeletable(vacevent){
-    this.ves.getDeletable(vacevent.id).subscribe(res => {
+    this.ves.getDeletable(this.vacevent.id).subscribe(res => {
     this.deletable = res;
       console.log(this.deletable);
     });
   }
+
+   /*isDeletable(vacevent){
+    return true;
+   /* this.ves.getDeletable(vacevent.id).subscribe(res => {
+    this.deletable = res;
+      console.log(this.deletable);
+    });
+    return this.deletable;
+  }*/
 
   removeVacevent() {
     if (confirm('Wollen Sie diesen Termin wirklich löschen?')) {
