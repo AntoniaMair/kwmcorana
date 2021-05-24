@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import jwt_decode from "jwt-decode";
-import { retry } from "rxjs/operators";
+import { catchError, retry } from "rxjs/operators";
+import { Observable, throwError } from 'rxjs';
 
 
 interface Token {
@@ -59,4 +60,33 @@ return false;
 isLoggedOut() {
 return !this.isLoggedIn();
 }
+
+  public isanAdmin(){
+    const user_id = localStorage.getItem("user_id");
+    
+  }
+
+  public isLoggedinAdmin(){
+    if (this.isLoggedIn() && this.isanAdmin)return true;
+    else return false;
+  }
+
+  public isLoggedinUser(){
+    if (this.isLoggedIn() && !this.isanAdmin)return true;
+    else return false;
+  }
+
+
+  isAdmin(user_id:number): Observable<Boolean> {
+    return this.http
+      .get<Boolean>(`${this.api}/user/checkadmin/${user_id}`)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
+  private errorHandler(error: Error | any): Observable<any> {
+    return throwError(error);
+  }
+
+  
 }
