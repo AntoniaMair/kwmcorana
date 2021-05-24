@@ -16,6 +16,8 @@ const routes: Routes = [
   { path: "register/:vacevent_id", component:  RegistrationFormComponent},
   { path: "admin", component: VaceventFormComponent },
   { path: "admin/:id", component: VaceventFormComponent },
+  { path: "admin/add/:location_id", component: VaceventFormComponent },
+
 ];
 
 @NgModule({

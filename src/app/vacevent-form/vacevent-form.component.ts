@@ -31,6 +31,7 @@ private router: Router
 
 ngOnInit() {
 const id = this.route.snapshot.params["id"];
+const location_id = this.route.snapshot.params["location_id"];
 if (id) {
 this.isUpdatingVacevent = true;
 this.ves.getSingle(id).subscribe(vacevent => {
@@ -38,7 +39,9 @@ this.vacevent = vacevent;
 this.initVacevent();
 });
 }
-this.initVacevent();
+else
+  this.initVacevent();
+
 }
 
 initVacevent() {
@@ -46,7 +49,7 @@ this.vaceventForm = this.fb.group({
 id: this.vacevent.id,
 vacdate: [this.vacevent.vacdate, Validators.required],
 maxPers: [this.vacevent.maxPers, [Validators.required, Validators.min(1)]],
-location_id: [this.vacevent.location_id, Validators.required]
+location_id: this.vacevent.location_id,
 });
 
 this.vaceventForm.statusChanges.subscribe(() =>
@@ -62,11 +65,12 @@ relativeTo: this.route
 });
 });
 } else {
+vacevent.location_id =  this.route.snapshot.params["location_id"];
 let location_id = vacevent.location_id;
 this.ves.create(vacevent).subscribe(res => {
 this.vacevent = VaceventFactory.empty();
 this.vaceventForm.reset(VaceventFactory.empty());
-this.router.navigate(["../vacevent", location_id], { relativeTo: this.route
+this.router.navigate(["../../../vacevent", location_id], { relativeTo: this.route
 });
 });
 }
