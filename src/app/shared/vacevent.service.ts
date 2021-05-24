@@ -46,6 +46,15 @@ export class VaceventService {
       .pipe(retry(3))
       .pipe(catchError(this.errorHandler));
   }
+  getDeletable(id:number): Observable<Boolean> {
+    return this.http
+      .get<Boolean>(`${this.api}/vacevent/deletable/${id}`)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
+ 
+
   private errorHandler(error: Error | any): Observable<any> {
     return throwError(error);
   }

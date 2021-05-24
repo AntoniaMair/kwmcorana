@@ -13,6 +13,7 @@ import { VaceventService } from "../shared/vacevent.service";
 
 export class VaceventListComponent implements OnInit {
   vacevents: Vacevent[];
+  
   //vacevent: Vacevent = VaceventFactory.empty();
 
   constructor(
@@ -30,6 +31,8 @@ export class VaceventListComponent implements OnInit {
     });
   
   }
+
+ 
 
 }
 

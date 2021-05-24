@@ -2,3 +2,7 @@
   <div class="header">{{vacevent?.vacdate}}</div>
   <div class="Kapazität">Maximale Personenanzahl: {{vacevent?.maxPers}}</div>
 </div>
+<button *ngIf="isDeletable(vacevent)" class="ui tiny red labeled icon button" (click)="removeVacevent()">
+  <i class="remove icon"></i>
+  Anmeldung löschen
+</button>
