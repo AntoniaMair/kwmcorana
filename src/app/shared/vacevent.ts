@@ -9,5 +9,6 @@ export class Vacevent {
     public location_id:number, 
     public vacdate:Date, 
     public maxPers:number,
-    public vaccinateds?: Vaccinated[]){}
+    public vaccinateds?: Vaccinated[],
+    public location?:Location){}
 }
