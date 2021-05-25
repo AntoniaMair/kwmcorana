@@ -50,6 +50,7 @@ initVacevent() {
 //TODO: beschreibung Kathi hilfe
 this.localVacDate = new Date(this.vacevent.vacdate);
 this.localVacString = this.toISOLocal(this.localVacDate).slice(0,-10);
+console.log(this.localVacString);
 this.vaceventForm = this.fb.group({
 id: this.vacevent.id,
 vacdate: [this.localVacString, Validators.required],

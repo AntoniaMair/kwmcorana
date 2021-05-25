@@ -57,6 +57,7 @@ console.log(this.registrationForm.value);
 console.log(vaccinated);
 this.vs.create(vaccinated).subscribe(res => {
 const vaccinated_id = res["id"];
+localStorage.setItem("vaccinated_id", vaccinated_id);
 this.vaccinated = VaccinatedFactory.empty();
 this.registrationForm.reset(VaccinatedFactory.empty());
 this.router.navigate(["../../myevents", vaccinated_id], { relativeTo: this.route
