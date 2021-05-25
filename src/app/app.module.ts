@@ -14,12 +14,14 @@ import { LocationService } from './shared/location.service';
 import { AppRoutingModule } from './app-routing.module';
 import { VaccinatedService } from './shared/vaccinated.service';
 import { VaceventService } from './shared/vacevent.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { VaceventListItemComponent } from './vacevent-list-item/vacevent-list-item.component';
 import { VaccinatedsListItemComponent } from './vaccinateds-list-item/vaccinateds-list-item.component';
 import { MyeventsComponent } from './myevents/myevents.component';
 import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './shared/authentication.service';
+import { TokenInterceptorService } from './shared/token-interceptor.service';
+import { JwtInterceptorService } from './shared/jwt.interceptor.service';
 
 
 
@@ -27,6 +29,17 @@ import { AuthenticationService } from './shared/authentication.service';
   imports:      [ BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
   declarations: [ AppComponent, HelloComponent, LocationListComponent, LocationListItemComponent, VaceventListComponent, VaccinatedsListComponent, VaceventFormComponent, RegistrationFormComponent, VaceventListItemComponent, VaccinatedsListItemComponent, MyeventsComponent, LoginComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [LocationService, VaccinatedService, VaceventService, AuthenticationService]
+  
+  providers: [LocationService, VaccinatedService, VaceventService, AuthenticationService, TokenInterceptorService, JwtInterceptorService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true,
+  },
+  {
+   provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptorService,
+    multi: true 
+  },
+  ]
 })
 export class AppModule { }
