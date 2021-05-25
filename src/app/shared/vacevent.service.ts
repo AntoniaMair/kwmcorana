@@ -53,6 +53,13 @@ export class VaceventService {
       .pipe(catchError(this.errorHandler));
   }
 
+  checkisFull(id:number): Observable<Boolean> {
+    return this.http
+      .get<Boolean>(`${this.api}/vacevent/isFull/${id}`)
+      .pipe(retry(3))
+      .pipe(catchError(this.errorHandler));
+  }
+
  
 
   private errorHandler(error: Error | any): Observable<any> {

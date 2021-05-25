@@ -12,6 +12,7 @@ import { VaceventService } from '../shared/vacevent.service';
 export class VaceventListItemComponent implements OnInit {
   @Input() vacevent: Vacevent;
   deletable: Boolean;
+  full:Boolean;
 
   constructor( private ves: VaceventService,
     private route: ActivatedRoute,
@@ -23,6 +24,11 @@ export class VaceventListItemComponent implements OnInit {
     this.deletable = res;
       console.log(this.deletable);
     });
+    this.ves.checkisFull(this.vacevent.id).subscribe(res => {
+    this.full = res;
+      console.log(this.full);
+    });
+
   }
 
    /*isDeletable(vacevent){
