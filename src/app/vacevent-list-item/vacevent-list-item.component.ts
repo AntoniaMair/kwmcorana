@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../shared/authentication.service';
 import {Vacevent} from '../shared/vacevent';
 import { VaceventService } from '../shared/vacevent.service';
 
@@ -14,7 +15,8 @@ export class VaceventListItemComponent implements OnInit {
 
   constructor( private ves: VaceventService,
     private route: ActivatedRoute,
-    private router: Router,) { }
+    private router: Router,
+    public authService: AuthenticationService) { }
 
   ngOnInit() {
     this.ves.getDeletable(this.vacevent.id).subscribe(res => {

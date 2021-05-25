@@ -2,7 +2,7 @@
   <div class="header">{{vacevent?.vacdate}}</div>
   <div class="Kapazität">Maximale Personenanzahl: {{vacevent?.maxPers}}</div>
 </div>
-<button *ngIf="deletable" class="ui tiny red labeled icon button" (click)="removeVacevent()">
+<button *ngIf="deletable && authService.isLoggedinAdmin()" class="ui tiny red labeled icon button" (click)="removeVacevent()">
   <i class="remove icon"></i>
   Vacevent löschen
 </button>
