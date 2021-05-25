@@ -2,7 +2,7 @@ import {Vaccinated} from './vaccinated';
 export class VaccinatedFactory {
 
   static empty(): Vaccinated {
-    return new Vaccinated(null, '', '', '', new Date(), '', '', '', 0, 0, '');
+    return new Vaccinated(null, '', '', '', new Date(), '', '', '', 0, '', 0);
   }
 
   static fromObject (rawVaccinated: any): Vaccinated{
@@ -16,8 +16,8 @@ export class VaccinatedFactory {
       rawVaccinated.email,
       rawVaccinated.tel,
       rawVaccinated.vaccinated,
+      rawVaccinated.user_id,
       rawVaccinated.vacevent_id,
-      rawVaccinated.user_id
     );
   }
 }
