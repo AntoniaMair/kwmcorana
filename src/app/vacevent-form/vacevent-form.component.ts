@@ -44,10 +44,17 @@ else
 
 }
 
+//TODO: beschreibung Kathi hilfe
+localVacDate: Date;
+localVacString: string;
+
 initVacevent() {
+//TODO: beschreibung Kathi hilfe
+this.localVacDate = new Date(this.vacevent.vacdate);
+this.localVacString = this.toISOLocal(this.localVacDate).slice(0,-10);
 this.vaceventForm = this.fb.group({
 id: this.vacevent.id,
-vacdate: [this.vacevent.vacdate, Validators.required],
+vacdate: [this.localVacString, Validators.required],
 maxPers: [this.vacevent.maxPers, [Validators.required, Validators.min(1)]],
 location_id: this.vacevent.location_id,
 });
@@ -75,6 +82,14 @@ this.router.navigate(["../../../vacevent", location_id], { relativeTo: this.rout
 });
 }
 }
+toISOLocal(d) {
+const z = n => ('0' + n).slice(-2);
+let off = d.getTimezoneOffset();
+const sign = off < 0 ? '+' : '-';
+off = Math.abs(off);
+return new Date(d.getTime() - (d.getTimezoneOffset() * 60000)).toISOString().slice(0, -1) + sign + z(off / 60 | 0) + ':' + z(off % 60);
+}
+
 updateErrorMessages() {
 console.log("Is invalid? " + this.vaceventForm.invalid);
 this.errors = {};
