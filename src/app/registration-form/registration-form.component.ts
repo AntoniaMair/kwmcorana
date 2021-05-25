@@ -6,6 +6,7 @@ import { RegistrationFormErrorMessages } from "./registration-form-error-message
 import { VaccinatedFactory } from "../shared/vaccinated-factory";
 import { VaccinatedService } from "../shared/vaccinated.service";
 import { Vaccinated } from "../shared/vaccinated";
+import { VaccinatedValidators } from "../shared/vaccinated-validators";
 //import { VaccinatedValidators } from "../shared/vaccinated-validators";
 
 @Component({
@@ -41,7 +42,7 @@ firstname: [this.vaccinated.firstname, Validators.required],
 lastname: [this.vaccinated.lastname, Validators.required],
 sex: [this.vaccinated.sex, Validators.required],
 birthdate: [this.vaccinated.birthdate, Validators.required],
-svnr: [this.vaccinated.svnr, Validators.required],
+svnr: [this.vaccinated.svnr, [/*VaccinatedValidators.svnrExists(this.vs),*/ Validators.required]],
 email: [this.vaccinated.email, Validators.required],
 tel: [this.vaccinated.tel, Validators.required],
 });

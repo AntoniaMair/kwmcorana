@@ -13,5 +13,7 @@ new ErrorMessage('birthdate', 'required', 'Das Geburtsdatum muss anagegeben werd
 new ErrorMessage('svnr', 'required', 'Die Sozialversicherungsnummer muss anagegeben werden'),
 new ErrorMessage('email', 'required', 'Eine Kontakt-Email-Adresse muss anagegeben werden'),
 new ErrorMessage('tel', 'required', 'Eine Kontakt-Telefonnummer muss anagegeben werden'),
+new ErrorMessage("svnr", "svnrExists", "Die Sozialversicherungsnummer existiert bereits in der Datenbank"),
+
 ];
 
