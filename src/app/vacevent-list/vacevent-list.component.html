@@ -1,11 +1,13 @@
 <div class="ui middle aligned selection divided list">
 <span *ngFor="let vacevent of vacevents">
-<a class="item kc-vacevent-list-item" 
+<a  *ngIf="authService.isLoggedinAdmin()" class="item kc-vacevent-list-item" 
  [vacevent]="vacevent" [routerLink]="'../../vaccinated/'+vacevent.id"></a>
+<a class="item kc-vacevent-list-item" 
+ [vacevent]="vacevent"></a>
 <a *ngIf="authService.isLoggedinAdmin()" class="ui tiny yellow labeled icon button"
 [routerLink]="['../../admin', vacevent?.id]">
 <i class="write icon"></i> Termin bearbeiten</a> 
-<a *ngIf="authService.isLoggedinUser()" class="ui tiny yellow labeled icon button"
+<a *ngIf="authService.isLoggedinUser() && !authService.isRegistered()" class="ui tiny yellow labeled icon button"
 [routerLink]="['../../register', vacevent?.id]">
 <i class="write icon"></i> Registrieren</a> 
 

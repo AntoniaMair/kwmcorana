@@ -16,13 +16,7 @@ export class AppComponent  {
   }
 
   getVaccinatedId(){
-    if(this.isLoggedIn()){
-      const vaccinated_id = localStorage.getItem("vaccinated_id");
-      if(vaccinated_id > '0'){
-          return vaccinated_id;
-      }
-      else return '';
-    }
+    return this.authService.getVaccinatedId();
   }
 
   isLoggedIn() {
@@ -30,8 +24,7 @@ export class AppComponent  {
   }
 
   isRegistered(){
-    if(this.getVaccinatedId() != "")return true;
-    else return false;
+    return this.authService.isRegistered();
   }
 
   getLoginLabel(){
