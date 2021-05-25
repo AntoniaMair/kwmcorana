@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="header">{{vacevent?.vacdate}}</div>
+  <div class="header">{{vacevent?.vacdate | date:'EEEE, dd. MMMM yyyy, hh:mm'}}</div>
   <div class="Kapazität">Maximale Personenanzahl: {{vacevent?.maxPers}}</div>
 </div>
 <a *ngIf="authService.isLoggedinUser() && !full && !authService.isRegistered()" class="ui tiny yellow labeled icon button"

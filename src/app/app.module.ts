@@ -21,6 +21,10 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './shared/authentication.service';
 import { TokenInterceptorService } from './shared/token-interceptor.service';
 import { JwtInterceptorService } from './shared/jwt.interceptor.service';
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+import { LOCALE_ID } from '@angular/core';
+registerLocaleData(localeDe);
 
 
 
@@ -39,6 +43,8 @@ import { JwtInterceptorService } from './shared/jwt.interceptor.service';
     useClass: JwtInterceptorService,
     multi: true 
   },
+  {provide: LOCALE_ID, useValue: 'de'}
+
   ]
 })
 export class AppModule { }
