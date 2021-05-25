@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from '../shared/authentication.service';
 import { VaccinatedFactory } from '../shared/vaccinated-factory';
 import { VaccinatedService } from '../shared/vaccinated.service';
 import { Vaccinated } from '../shared/vacevent';
@@ -15,7 +16,8 @@ export class VaccinatedsListItemComponent implements OnInit {
   constructor(
     private vs: VaccinatedService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    public authService: AuthenticationService
   ) {}
 
   ngOnInit() {}

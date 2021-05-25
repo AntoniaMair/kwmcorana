@@ -1,8 +1,8 @@
 <div class="content">
   <span class="vaccinated" ></span>
   <div class="header">{{vaccinated?.firstname}} {{vaccinated?.lastname}}</div>
-  <button *ngIf="vaccinated?.vaccinated != 1" class="geimpft button" (click)="updateVaccinatedStatusevent()">geimpft</button>
-  <button *ngIf="vaccinated?.vaccinated != 1" class="ui tiny red labeled icon button" (click)="removeVaccinationevent()">
+  <button *ngIf="vaccinated?.vaccinated != 1 && authService.isLoggedinAdmin()" class="geimpft button" (click)="updateVaccinatedStatusevent()">geimpft</button>
+  <button *ngIf="vaccinated?.vaccinated != 1 && authService.isLoggedinAdmin()" class="ui tiny red labeled icon button" (click)="removeVaccinationevent()">
   <i class="remove icon"></i>
   Anmeldung löschen
 </button>
