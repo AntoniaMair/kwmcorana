@@ -68,20 +68,20 @@ export class AuthenticationService {
     return !this.isLoggedIn();
   }
 
-  public isanAdmin(){
+  isanAdmin(){
     const admin = localStorage.getItem("isAdmin");
     if(admin == '1')return true;
     else return false;
     
   }
 
-  public isLoggedinAdmin(){
-    if (this.isLoggedIn() && this.isanAdmin)return true;
+  isLoggedinAdmin(){
+    if (this.isLoggedIn() && this.isanAdmin())return true;
     else return false;
   }
 
-  public isLoggedinUser(){
-    if (this.isLoggedIn() && !this.isanAdmin)return true;
+  isLoggedinUser(){
+    if (this.isLoggedIn() && !this.isanAdmin())return true;
     else return false;
   }
 

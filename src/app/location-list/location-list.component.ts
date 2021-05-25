@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AuthenticationService } from '../shared/authentication.service';
 import { Location, Vacevent } from '../shared/location';
 import { LocationService } from '../shared/location.service';
 
@@ -12,7 +13,7 @@ export class LocationListComponent implements OnInit {
 
   @Output() showDetailsEvent = new EventEmitter<Location>();
 
-  constructor(private ls: LocationService) {}
+  constructor(private ls: LocationService, public authService: AuthenticationService) {}
 
   showDetails(location: Location) {
     this.showDetailsEvent.emit(location);
