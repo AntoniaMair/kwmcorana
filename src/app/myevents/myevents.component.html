@@ -1,8 +1,18 @@
 <h2>Ihre Impfregistrierung</h2>
-<p>Details zu Ihrer Impfung</p>
-<div class="content">
+<h4>Details zu Ihrer Impfung</h4>
+<!--<div class="content">
   <div class="header">Impfdatum: {{vacevent?.vacdate}}</div>
   <div class="address1">Impflocation: {{vacevent?.location['bezeichnung']}}</div>
   <div class="address2">Adresse: {{vacevent?.location['street']}},  {{vacevent?.location['plz']}} {{vacevent?.location['ort']}}</div>
+</div>-->
+
+<div class="ui card">
+  <div class="content">
+    <div class="header">{{vacevent?.vacdate | date:'EEEE, dd. MM. yyyy, HH:MM'}}</div>
+  </div>
+  <div class="content">
+    <p class="ui sub header">Impflocation: {{vacevent?.location['bezeichnung']}}</p>
+     <p class="ui sub header">Adresse: {{vacevent?.location['street']}},  {{vacevent?.location['plz']}} {{vacevent?.location['ort']}}</p>
+  </div>  
 </div>
 
