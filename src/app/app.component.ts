@@ -10,22 +10,29 @@ import { VaccinatedService } from './shared/vaccinated.service';
 export class AppComponent  {
 
   constructor(private authService: AuthenticationService, private vs: VaccinatedService,) { }
-  vaccinated_id:string;
+  //vaccinated_id:string = this.getVaccinatedId() ? this.getVaccinatedId() : "";
 
   ngOnInit() {
+    
+  
+  }
+
+  getVaccinatedId(){
     if(this.isLoggedIn()){
       const vaccinated_id = localStorage.getItem("vaccinated_id");
       if(vaccinated_id > '0'){
-          this.vaccinated_id = vaccinated_id;
+          return vaccinated_id;
       }
+      else return '';
     }
-  
   }
+
   isLoggedIn() {
   return this.authService.isLoggedIn();
   }
+
   isRegistered(){
-    if(this.vaccinated_id)return true;
+    if(this.getVaccinatedId() != "")return true;
     else return false;
   }
 
