@@ -22,6 +22,12 @@
 </div>
 </div>
 <div class="field">
+<label>Datum</label>
+<input type="datetime-local" formControlName="birthdate">
+<div *ngIf="errors.birthdate" class="ui negative message"> {{ errors.birthdate
+}} </div>
+</div>
+<div class="field">
 <label>Sozialversicherungsnummer</label>
 <input formControlName="svnr">
 <div *ngIf="errors.svnr" class="ui negative message">{{ errors.svnr}}
