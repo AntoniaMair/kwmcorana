@@ -35,8 +35,7 @@ initVaccinated() {
 this.registrationForm = this.fb.group({
 id: this.vaccinated.id,
 vacevent_id: this.route.snapshot.params["vacevent_id"],
-user_id: 1,
-
+user_id: localStorage.getItem("user_id"),
 firstname: [this.vaccinated.firstname, Validators.required],
 lastname: [this.vaccinated.lastname, Validators.required],
 sex: [this.vaccinated.sex, Validators.required],
@@ -51,7 +50,9 @@ this.updateErrorMessages());
 }
 
 submitForm() {
-const vaccinated: Vaccinated = VaccinatedFactory.fromObject(this.registrationForm.value);
+const vaccinated: Vaccinated = VaccinatedFactory.fromObject
+(this.registrationForm.value);
+vaccinated.user_id = localStorage.getItem("user_id");
 console.log(vaccinated);
 this.vs.create(vaccinated).subscribe(res => {
 const vaccinated_id = res["id"];

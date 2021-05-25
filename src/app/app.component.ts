@@ -13,8 +13,6 @@ export class AppComponent  {
   //vaccinated_id:string = this.getVaccinatedId() ? this.getVaccinatedId() : "";
 
   ngOnInit() {
-    
-  
   }
 
   getVaccinatedId(){
