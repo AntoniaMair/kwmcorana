@@ -4,6 +4,7 @@ import { Vacevent } from "../shared/vacevent";
 import { Location } from "../shared/location";
 import { VaceventFactory } from "../shared/vacevent-factory";
 import { VaceventService } from "../shared/vacevent.service";
+import { AuthenticationService } from "../shared/authentication.service";
 
 @Component({
   selector: 'kc-vacevent-list',
@@ -20,6 +21,7 @@ export class VaceventListComponent implements OnInit {
     private ves: VaceventService,
     private route: ActivatedRoute,
     private router: Router,
+    public authService: AuthenticationService
   ) { }
 
   ngOnInit() {
