@@ -9,7 +9,7 @@ import { VaccinatedService } from './shared/vaccinated.service';
 })
 export class AppComponent  {
 
-  constructor(private authService: AuthenticationService, private vs: VaccinatedService,) { }
+  constructor(public authService: AuthenticationService, private vs: VaccinatedService,) { }
   //vaccinated_id:string = this.getVaccinatedId() ? this.getVaccinatedId() : "";
 
   ngOnInit() {
