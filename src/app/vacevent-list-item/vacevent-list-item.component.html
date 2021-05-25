@@ -1,10 +1,10 @@
 <div class="content">
-  <div class="header">{{vacevent?.vacdate | date:'EEEE, dd. MMMM yyyy, hh:mm'}}</div>
+  <div class="header">{{vacevent?.vacdate | date:'EEEE, dd. MM. yyyy, HH:MM'}}</div>
   <div class="Kapazität">Maximale Personenanzahl: {{vacevent?.maxPers}}</div>
 </div>
-<a *ngIf="authService.isLoggedinUser() && !full && !authService.isRegistered()" class="ui tiny yellow labeled icon button"
-[routerLink]="['../../register', vacevent?.id]">
-<i class="write icon"></i> Registrieren</a>
+<a *ngIf="authService.isLoggedinUser() && !full && !authService.isRegistered()"
+  class="ui tiny yellow labeled icon button" [routerLink]="['../../register', vacevent?.id]">
+  <i class="write icon"></i> Registrieren</a>
 <button *ngIf="deletable && authService.isLoggedinAdmin()" class="ui tiny red labeled icon button" (click)="removeVacevent()">
   <i class="remove icon"></i>
   Vacevent löschen
