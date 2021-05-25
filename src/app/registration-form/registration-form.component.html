@@ -15,11 +15,20 @@
 <div *ngIf="errors.lastname" class="ui negative message"> {{ errors.lastname
 }} </div>
 </div>
-<div class="field">
+<!--<div class="field">
 <label>Geschlecht</label>
 <input formControlName="sex">
 <div *ngIf="errors.sex" class="ui negative message">{{ errors.sex}}
 </div>
+</div>-->
+<div class="field">
+<label>Geschlecht</label>
+<select formControlName="sex">
+      <option disabled>Choose Value</option>
+      <option value="w">Weiblich</option>
+      <option value="m">Männlich</option>
+     <option value="d">Divers</option>
+</select>
 </div>
 <div class="field">
 <label>Datum</label>
