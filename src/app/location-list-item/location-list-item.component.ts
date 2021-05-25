@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { AuthenticationService } from '../shared/authentication.service';
 import {Location} from '../shared/location';
 
 @Component({
@@ -9,7 +10,7 @@ import {Location} from '../shared/location';
 export class LocationListItemComponent implements OnInit {
   @Input() location: Location;
 
-  constructor() { }
+  constructor(public authService: AuthenticationService) { }
 
   ngOnInit() {
   }
