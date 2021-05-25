@@ -49,7 +49,7 @@ export class VaceventFormComponent implements OnInit {
   initVacevent() {
   //TODO: beschreibung Kathi hilfe
     this.localVacDate = new Date(this.vacevent.vacdate);
-    this.localVacString = this.toISOLocal(this.localVacDate).slice(0, -6);
+    this.localVacString = this.toISOLocal(this.localVacDate).slice(0, -10);
     this.vaceventForm = this.fb.group({
       id: this.vacevent.id,
       vacdate: [this.localVacString, Validators.required],

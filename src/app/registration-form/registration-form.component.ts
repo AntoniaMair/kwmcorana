@@ -41,7 +41,7 @@ firstname: [this.vaccinated.firstname, Validators.required],
 lastname: [this.vaccinated.lastname, Validators.required],
 sex: [this.vaccinated.sex, Validators.required],
 birthdate: [this.vaccinated.birthdate, Validators.required],
-svnr: [this.vaccinated.svnr, Validators.required,],
+svnr: [this.vaccinated.svnr, Validators.required],
 email: [this.vaccinated.email, Validators.required],
 tel: [this.vaccinated.tel, Validators.required],
 });

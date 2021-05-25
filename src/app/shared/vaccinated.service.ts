@@ -40,6 +40,10 @@ export class VaccinatedService {
       .pipe(retry(3))
       .pipe(catchError(this.errorHandler));
   }
+  checkSvnr(svnr: string): Observable<Boolean> {
+    return this.http.get<Boolean>(`${this.api}/vaccinated/checksvnr/${svnr}`)
+      .pipe(catchError(this.errorHandler));
+  }
 
   getVaccinatedIdbyUserId(user_id:string): Observable<any> {
     return this.http
