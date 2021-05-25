@@ -42,12 +42,13 @@ export class VaceventFormComponent implements OnInit {
 
   }
 
-  //TODO: beschreibung Kathi hilfe
+  //Anmerkung: Bei dieser Lösung mit dieser Art von Datums-Pre-Laden im Formular wurde mir von 
+  //Fr. Brunner geholen.
   localVacDate: Date;
   localVacString: string;
 
   initVacevent() {
-  //TODO: beschreibung Kathi hilfe
+  
     this.localVacDate = new Date(this.vacevent.vacdate);
     this.localVacString = this.toISOLocal(this.localVacDate).slice(0, -10);
     this.vaceventForm = this.fb.group({
