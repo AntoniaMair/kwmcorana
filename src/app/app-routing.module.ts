@@ -11,7 +11,7 @@ import { MyeventsComponent } from './myevents/myevents.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'locaation', pathMatch: 'full' },
+  { path: '', redirectTo: 'locations', pathMatch: 'full' },
   { path: 'locations', component: LocationListComponent },
   { path: 'vaccinated/:vacevent_id', component: VaccinatedsListComponent },
   { path: "vacevent/:location_id", component:  VaceventListComponent},
